@@ -13,15 +13,14 @@ Le but du projet est simple:
 
 ## Ce qui a été mis en place
 
-### 1. Base de données MySQL
+### 1. Base de données locale
 
-La base locale a été configurée pour utiliser MySQL au lieu de SQLite.
+L’environnement local utilise une base MySQL configurée via le fichier `.env`.
 
-- Connexion par défaut: `mysql`
-- Base: `restproject`
-- Hôte: `127.0.0.1`
-- Port: `3306`
-- Utilisateur: `root`
+- connexion par défaut: `mysql`
+- base locale dédiée au projet;
+- paramètres à adapter selon votre machine ou votre outil local;
+- ne pas publier les identifiants de connexion dans le dépôt.
 
 ### 2. Modèle multi-restaurant
 
@@ -203,20 +202,20 @@ npm install
 
 ### 2. Configurer l’environnement
 
-Vérifie le fichier `.env`:
+Vérifie le fichier `.env` et renseigne tes paramètres locaux:
 
 ```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=restproject
-DB_USERNAME=root
-DB_PASSWORD=
+DB_CONNECTION=...
+DB_HOST=...
+DB_PORT=...
+DB_DATABASE=...
+DB_USERNAME=...
+DB_PASSWORD=...
 ```
 
 ### 3. Créer la base MySQL
 
-Crée une base vide nommée `restproject` dans MySQL.
+Crée une base vide dans MySQL puis adapte les variables du `.env` en conséquence.
 
 ### 4. Générer la clé d’application
 
